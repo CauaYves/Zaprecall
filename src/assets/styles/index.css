@@ -1,0 +1,57 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Recursive&family=Righteous&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+
+img{
+  height: 60px;
+}
+
+h1{
+  margin-left: 20px;
+  font: normal 36px Righteous;
+  color: #FFFFFF;
+}
+
+footer{
+  background-color: #FFFFFF;
+
+  height: 70px;
+  
+  font: normal 14px Recursive;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon{
+  height: 22px;
+}
+
+.card{
+  background-color: #FFFFFF;
+
+  width: 300px;
+  height: 65px;
+
+  display: flex;
+  align-items: center;
+}
+
+.face{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+} */
