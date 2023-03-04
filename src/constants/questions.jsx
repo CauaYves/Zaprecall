@@ -1,4 +1,4 @@
-const cards = [
+const QUESTIONS = [
 	{ question: "O que é JSX?", answer: "Uma extensão da linguagem JavaScript" },
 	{ question: "O React é __", answer: "Uma biblioteca JavaScript para construção de interfaces" },
 	{ question: "Componentes devem iniciar com __", answer: "Letra maiúscula" },
@@ -8,4 +8,4 @@ const cards = [
 	{ question: "Usamos props para __", answer: "Passar diferentes informações para componentes" },
 	{ question: "Usamos estado (state) para __", answer: "Dizer para o React quais informações quando atualizadas devem renderizar a tela novamente" }
 ]
-export default cards
+export default QUESTIONS

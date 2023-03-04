@@ -13,15 +13,13 @@ export default function Header() {
     )
 }
 const TopContainer = styled.div`
-background-color: #FB6B6B;
+    background-color: #FB6B6B;
     width: 100vw;
     
     display: flex;
     align-items: center;
     justify-content: center;
 
-    position: fixed;
-    z-index: 1;
 `
 const Logo = styled.div`
     img{
@@ -31,4 +29,7 @@ const Logo = styled.div`
 const Title = styled.div`
     color: white;
     margin-left: 15px;
+    h1{
+        font-family: 'Recursive', Arial, Helvetica, sans-serif;
+    }
 `
