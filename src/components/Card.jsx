@@ -1,23 +1,47 @@
 import play from '../assets/seta_play.svg'
 import turn from '../assets/seta_virar.svg'
 import check from '../assets/icone_certo.png'
+import fail from '../assets/icone_erro.png'
+import almost from '../assets/icone_quase.png'
 import styled from 'styled-components'
 
-export default function Card({ question, answer, mapIndex, stateCard, setStateCard, disabled, setDisabled, concluidos, setConcluidos }) {
+export default function Card({ question, answer, mapIndex, stateCard, setStateCard, disabled, setDisabled, concluidos, setConcluidos, quaseConcluidos, setQuaseConcluidos, naoLembrados, setNaoLembrados }) {
 
     const index = mapIndex + 1
-    if (concluidos.includes(index)) {
+    if (naoLembrados.includes(index)) {
+        return (
+            <FinalFailCardComp>
+                <p>Pergunta{index}</p>
+                <img
+                    src={fail}
+                    alt='fail'
+                    className='icon'
+                />
+            </FinalFailCardComp>
+        )
+
+    } else if (quaseConcluidos.includes(index)) {
+        return (
+            <FinalAlmostCardComp>
+                <p>Pergunta{index}</p>
+                <img
+                    src={almost}
+                    alt='almost'
+                    className='icon'
+                />
+            </FinalAlmostCardComp>
+        )
+    } else if (concluidos.includes(index)) {
 
         return (
-            <FinalCardComp>
+            <FinalRightCardComp>
                 <p>Pergunta {index}</p>
                 <img
                     src={check}
                     alt='check'
                     className='icon'
-                    onClick={() => setStateCard([...stateCard, index])}
                 />
-            </FinalCardComp>
+            </FinalRightCardComp>
         )
 
     } else if (disabled.includes(index)) {
@@ -29,8 +53,8 @@ export default function Card({ question, answer, mapIndex, stateCard, setStateCa
                     <p>{answer}</p>
                 </TextContainer>
                 <ButtonContainer>
-                    <RedButton onClick={() => setConcluidos([...concluidos, index])}>Não lembrei</RedButton>
-                    <YellButton onClick={() => setConcluidos([...concluidos, index])}>Quase não lembrei</YellButton>
+                    <RedButton onClick={() => setNaoLembrados([...naoLembrados, index])}>Não lembrei</RedButton>
+                    <YellButton onClick={() => setQuaseConcluidos([...quaseConcluidos, index])}>Quase não lembrei</YellButton>
                     <GreeButton onClick={() => setConcluidos([...concluidos, index])}>Zap!</GreeButton>
                 </ButtonContainer>
 
@@ -86,6 +110,7 @@ const CardComp = styled.div`
     }
 `
 const QuestionComp = styled.div`
+    color: #333333;
     background-color: #FFFFD4;
     box-sizing: border-box;
 
@@ -109,12 +134,14 @@ const Qicon = styled.div`
 `
 const AnswerComp = styled.div`
     box-sizing: border-box;
-    height: 131px;
+    min-height: 131px;
     width: 300px;
     padding: 5px 15px;
     border-radius: 5px;
     margin: 10px;
+    font-size: 18px;
 
+    color: #333333;
     background-color: #FFFFD4;
 
     display: flex;
@@ -127,6 +154,8 @@ const TextContainer = styled.div`
 
 `
 const ButtonContainer = styled.div`
+    font-weight: 400;
+    font-size: 12px;
     display: flex;
     flex-direction: row;
 `
@@ -179,7 +208,7 @@ const GreeButton = styled.div`
     cursor: pointer;
 
 `
-const FinalCardComp = styled.div`
+const FinalRightCardComp = styled.div`
     background-color: white;
 
     margin: 10px;
@@ -197,6 +226,52 @@ const FinalCardComp = styled.div`
 
     text-decoration: line-through;
     color: #2FBE34;
+
+    img{
+        width: 20px;
+    }
+`
+const FinalAlmostCardComp = styled.div`
+    background-color: white;
+    color: #FF922E;
+    margin: 10px;
+    padding: 0px 20px;
+    width: 300px;
+
+    border-radius: 5px;
+    box-sizing: border-box;
+
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    text-decoration: line-through;
+   
+
+    img{
+        width: 20px;
+    }
+`
+const FinalFailCardComp = styled.div`
+    background-color: white;
+    color: #FF3030;
+    margin: 10px;
+    padding: 0px 20px;
+    width: 300px;
+
+    border-radius: 5px;
+    box-sizing: border-box;
+
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    text-decoration: line-through;
+   
 
     img{
         width: 20px;

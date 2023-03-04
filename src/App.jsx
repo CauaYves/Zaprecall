@@ -10,6 +10,8 @@ function App() {
   const [stateCard, setStateCard] = useState([])
   const [disabled, setDisabled] = useState([])
   const [concluidos, setConcluidos] = useState([])
+  const [quaseConcluidos, setQuaseConcluidos] = useState([])
+  const [naoLembrados, setNaoLembrados] = useState([])
 
   return (
     <Container>
@@ -19,16 +21,26 @@ function App() {
         {QUESTIONS.map((i, index) => {
           return(
             <Card 
+              setQuaseConcluidos={setQuaseConcluidos}
+              quaseConcluidos={quaseConcluidos}
+
+              naoLembrados={naoLembrados}
+              setNaoLembrados={setNaoLembrados}
+
               concluidos={concluidos}
               setConcluidos={setConcluidos}
+
               disabled={disabled}
               setDisabled={setDisabled}
+
+              stateCard={stateCard}
+              setStateCard={setStateCard}  
+              
               key={index} 
               question={i.question} 
               answer={i.answer} 
               mapIndex={index}
-              stateCard={stateCard}
-              setStateCard={setStateCard}  
+
             />
 
           )

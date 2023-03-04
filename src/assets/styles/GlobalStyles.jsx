@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
     border: none;
     outline: 0;
     box-sizing: border-box;
+    font-weight: 800;
   }
 `;
 

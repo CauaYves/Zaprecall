@@ -17,6 +17,7 @@ export default function Footer({concluidos}){
 
 const FooterContainer = styled.footer`
     background-color: white;
+    font-weight: 400;
 
     width: 100vw;
     height: 70px;
