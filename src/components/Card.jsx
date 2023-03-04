@@ -10,9 +10,10 @@ export default function Card({ question, answer, mapIndex, stateCard, setStateCa
     const index = mapIndex + 1
     if (naoLembrados.includes(index)) {
         return (
-            <FinalFailCardComp>
-                <p>Pergunta{index}</p>
+            <FinalFailCardComp data-test="flashcard">
+                <p data-test="flashcard-text">Pergunta{index}</p>
                 <img
+                    data-test="no-icon"
                     src={fail}
                     alt='fail'
                     className='icon'
@@ -22,9 +23,10 @@ export default function Card({ question, answer, mapIndex, stateCard, setStateCa
 
     } else if (quaseConcluidos.includes(index)) {
         return (
-            <FinalAlmostCardComp>
-                <p>Pergunta{index}</p>
+            <FinalAlmostCardComp data-test="flashcard">
+                <p data-test="flashcard-text">Pergunta{index}</p>
                 <img
+                    data-test="partial-icon"
                     src={almost}
                     alt='almost'
                     className='icon'
@@ -34,9 +36,10 @@ export default function Card({ question, answer, mapIndex, stateCard, setStateCa
     } else if (concluidos.includes(index)) {
 
         return (
-            <FinalRightCardComp>
-                <p>Pergunta {index}</p>
+            <FinalRightCardComp data-test="flashcard">
+                <p data-test="flashcard-text">Pergunta {index}</p>
                 <img
+                    data-test="zap-icon"
                     src={check}
                     alt='check'
                     className='icon'
@@ -47,10 +50,10 @@ export default function Card({ question, answer, mapIndex, stateCard, setStateCa
     } else if (disabled.includes(index)) {
         console.log(concluidos.length)
         return (
-            <AnswerComp>
+            <AnswerComp data-test="flashcard">
 
                 <TextContainer>
-                    <p>{answer}</p>
+                    <p data-test="flashcard-text">{answer}</p>
                 </TextContainer>
                 <ButtonContainer>
                     <RedButton onClick={() => setNaoLembrados([...naoLembrados, index])}>Não lembrei</RedButton>
@@ -63,10 +66,11 @@ export default function Card({ question, answer, mapIndex, stateCard, setStateCa
     } else if (stateCard.includes(index)) {
 
         return (
-            <QuestionComp disabled={disabled}>
-                <p>{question}</p>
+            <QuestionComp data-test="flashcard">
+                <p data-test="flashcard-text">{question}</p>
                 <Qicon>
                     <img
+                        data-test="turn-btn"
                         src={turn}
                         alt={turn}
                         onClick={() => setDisabled([...disabled, index])}
@@ -74,11 +78,13 @@ export default function Card({ question, answer, mapIndex, stateCard, setStateCa
                 </Qicon>
             </QuestionComp>
         )
+
     } else if (!stateCard.includes(index)) {
         return (
-            <CardComp>
-                <p>Pergunta {index}</p>
+            <CardComp data-test="flashcard">
+                <p data-test="flashcard-text" >Pergunta {index}</p>
                 <img
+                    data-test="play-btn"
                     src={play}
                     alt='play'
                     className='icon'
