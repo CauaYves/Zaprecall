@@ -1,11 +1,15 @@
 import styled from "styled-components"
+import QUESTIONS from "../constants/QUESTIONS"
 
-export default function Footer(){
+export default function Footer({concluidos}){
+    const flashCompleted = concluidos.length
+
     return(
         <FooterContainer>
             <p>
-                <span>0/4</span>
-                <span>CONCLUIDOS</span>
+            
+                <span> {flashCompleted}/{QUESTIONS.length} </span>
+                <span> CONCLUIDOS </span>
             </p>
         </FooterContainer>
     )

@@ -1,11 +1,27 @@
 import play from '../assets/seta_play.svg'
 import turn from '../assets/seta_virar.svg'
+import check from '../assets/icone_certo.png'
 import styled from 'styled-components'
 
-export default function Card({ question, answer, mapIndex, stateCard, setStateCard, disabled, setDisabled }) {
+export default function Card({ question, answer, mapIndex, stateCard, setStateCard, disabled, setDisabled, concluidos, setConcluidos }) {
 
     const index = mapIndex + 1
-    if (disabled.includes(index)) {
+    if (concluidos.includes(index)) {
+
+        return (
+            <FinalCardComp>
+                <p>Pergunta {index}</p>
+                <img
+                    src={check}
+                    alt='check'
+                    className='icon'
+                    onClick={() => setStateCard([...stateCard, index])}
+                />
+            </FinalCardComp>
+        )
+
+    } else if (disabled.includes(index)) {
+        console.log(concluidos.length)
         return (
             <AnswerComp>
 
@@ -13,14 +29,14 @@ export default function Card({ question, answer, mapIndex, stateCard, setStateCa
                     <p>{answer}</p>
                 </TextContainer>
                 <ButtonContainer>
-                    <RedButton>Não lembrei</RedButton>
-                    <YellButton>Quase não lembrei</YellButton>
-                    <GreeButton>Zap!</GreeButton>
+                    <RedButton onClick={() => setConcluidos([...concluidos, index])}>Não lembrei</RedButton>
+                    <YellButton onClick={() => setConcluidos([...concluidos, index])}>Quase não lembrei</YellButton>
+                    <GreeButton onClick={() => setConcluidos([...concluidos, index])}>Zap!</GreeButton>
                 </ButtonContainer>
 
             </AnswerComp>
         )
-    }else if (stateCard.includes(index)) {
+    } else if (stateCard.includes(index)) {
 
         return (
             <QuestionComp disabled={disabled}>
@@ -115,6 +131,7 @@ const ButtonContainer = styled.div`
     flex-direction: row;
 `
 const RedButton = styled.div`
+    padding: 5px;
     margin: 5px; 
     display: flex;
     align-items: center;
@@ -125,9 +142,12 @@ const RedButton = styled.div`
     background-color: #FF3030;
     color: white;
     text-align: center;
+    cursor: pointer;
 
 `
 const YellButton = styled.div`
+    padding: 5px;
+
     margin: 5px; 
     display: flex;
     align-items: center;
@@ -139,9 +159,12 @@ const YellButton = styled.div`
     background-color: #FF922E;
     color: white;
     text-align: center;
+    cursor: pointer;
 
 `
 const GreeButton = styled.div`
+    padding: 5px;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -153,5 +176,29 @@ const GreeButton = styled.div`
     background-color: #2FBE34;
     color: white;
     text-align: center;
+    cursor: pointer;
 
+`
+const FinalCardComp = styled.div`
+    background-color: white;
+
+    margin: 10px;
+    padding: 0px 20px;
+    width: 300px;
+
+    border-radius: 5px;
+    box-sizing: border-box;
+
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    text-decoration: line-through;
+    color: #2FBE34;
+
+    img{
+        width: 20px;
+    }
 `
