@@ -47,7 +47,9 @@ function App() {
         })}
 
       </CardContainer>
-      <Footer 
+      <Footer  
+        naoLembrados={naoLembrados}
+        quaseConcluidos={quaseConcluidos}
         concluidos={concluidos}
       />
     </Container>

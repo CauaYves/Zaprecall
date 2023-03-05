@@ -1,9 +1,9 @@
 import styled from "styled-components"
 import QUESTIONS from "../constants/QUESTIONS"
 
-export default function Footer({concluidos}){
-    const flashCompleted = concluidos.length
-
+export default function Footer({concluidos, quaseConcluidos, naoLembrados}){
+    const flashCompleted = concluidos.length + quaseConcluidos.length + naoLembrados.length
+  
     return(
         <FooterContainer>
             <p>
