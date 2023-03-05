@@ -5,7 +5,7 @@ export default function Footer({concluidos, quaseConcluidos, naoLembrados}){
     const flashCompleted = concluidos.length + quaseConcluidos.length + naoLembrados.length
   
     return(
-        <FooterContainer>
+        <FooterContainer data-test="footer">
             <p>
             
                 <span> {flashCompleted}/{QUESTIONS.length} </span>
