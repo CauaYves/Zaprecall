@@ -6,8 +6,39 @@
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 
+
 ## Preview
 ![ezgif com-gif-maker (1)](https://github.com/CauaYves/projeto9-zaprecall/assets/108950428/20793420-51ca-49a1-96fb-951e4b5125b5)
+
+# Pré-requisitos
+-Node.js: Certifique-se de ter o Node.js instalado. Você pode baixá-lo em nodejs.org.
+Clone o repositório, Abra o terminal e navegue até a pasta onde deseja clonar o projeto. Execute o seguinte comando para clonar o repositório:
+
+    git clone https://github.com/CauaYves/Zaprecall.git
+
+Instale as dependências, No terminal, execute o seguinte comando para instalar as dependências do projeto listadas no arquivo package.json:
+
+    npm install
+
+Agora, você pode iniciar o servidor de desenvolvimento do CRA. Execute o seguinte comando:
+
+    npm start
+Isso iniciará o servidor de desenvolvimento e abrirá o projeto no seu navegador padrão. O CRA oferece recarregamento automático, então você verá as alterações em tempo real enquanto trabalha no projeto.
+
+Abra seu navegador e acesse o seguinte URL:
+
+    http://localhost:3000
+
+
+
+## Implantar o aplicativo:
+
+Quando estiver pronto para implantar seu aplicativo em produção, você pode criar uma versão otimizada usando o seguinte comando:
+
+    npm run build
+Isso gerará uma pasta build com os arquivos otimizados para produção. Você pode hospedar esses arquivos em qualquer serviço de hospedagem web.
+
+Isso conclui o manual de instruções para executar um projeto front-end React criado com o Create React App. Lembre-se de que este é um guia básico e pode haver etapas adicionais específicas para seu projeto, como configurar variáveis de ambiente ou integrações com API. Certifique-se de consultar a documentação do CRA e do seu projeto para obter informações adicionais.
 
 ## ✅ Requisitos
 
