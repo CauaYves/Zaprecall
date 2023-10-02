@@ -1,5 +1,11 @@
 # Fast recall
 
+# Tecnologias
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+
 ## Preview
 ![ezgif com-gif-maker (1)](https://github.com/CauaYves/projeto9-zaprecall/assets/108950428/20793420-51ca-49a1-96fb-951e4b5125b5)
 
